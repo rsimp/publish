@@ -1,0 +1,358 @@
+<!DOCTYPE html><html><head>
+      <title>test</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="647px" preserveAspectRatio="none" style="width:1051px;height:647px;" version="1.1" viewBox="0 0 1051 647" width="1051px" zoomAndPan="magnify"><defs><filter height="300%" id="fdn41owmamn91" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster components/user-admin--><polygon fill="#FFFFFF" filter="url(#fdn41owmamn91)" points="14,16.5,201,16.5,208,38.9883,378,38.9883,378,528,14,528,14,16.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="14" x2="208" y1="38.9883" y2="38.9883"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="181" x="18" y="32.0352">components/user-admin</text><!--cluster portable-model/admin--><polygon fill="#FFFFFF" filter="url(#fdn41owmamn91)" points="397,189.5,570,189.5,577,211.9883,829,211.9883,829,474.5,397,474.5,397,189.5" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="397" x2="577" y1="211.9883" y2="211.9883"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="167" x="401" y="205.0352">portable-model/admin</text><!--class ManageGroupForm--><rect fill="#FEFECE" filter="url(#fdn41owmamn91)" height="48" id="ManageGroupForm" style="stroke: #A80036; stroke-width: 1.5;" width="183" x="176.5" y="43.5"/><ellipse cx="191.5" cy="59.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M194.4731,65.1431 Q193.8921,65.4419 193.2529,65.5913 Q192.6138,65.7407 191.9082,65.7407 Q189.4014,65.7407 188.0815,64.0889 Q186.7617,62.437 186.7617,59.3159 Q186.7617,56.1865 188.0815,54.5347 Q189.4014,52.8828 191.9082,52.8828 Q192.6138,52.8828 193.2612,53.0322 Q193.9087,53.1816 194.4731,53.4805 L194.4731,56.2031 Q193.8423,55.6221 193.2488,55.3523 Q192.6553,55.0825 192.0244,55.0825 Q190.6797,55.0825 189.9949,56.1492 Q189.3101,57.2158 189.3101,59.3159 Q189.3101,61.4077 189.9949,62.4744 Q190.6797,63.541 192.0244,63.541 Q192.6553,63.541 193.2488,63.2712 Q193.8423,63.0015 194.4731,62.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="151" x="205.5" y="65.5469">ManageGroupForm</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="177.5" x2="358.5" y1="75.5" y2="75.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="177.5" x2="358.5" y1="83.5" y2="83.5"/><!--class ManageItemsModal--><rect fill="#FEFECE" filter="url(#fdn41owmamn91)" height="356.7891" id="ManageItemsModal" style="stroke: #A80036; stroke-width: 1.5;" width="347" x="22.5" y="163"/><ellipse cx="115.75" cy="179" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M118.7231,184.6431 Q118.1421,184.9419 117.5029,185.0913 Q116.8638,185.2407 116.1582,185.2407 Q113.6514,185.2407 112.3315,183.5889 Q111.0117,181.937 111.0117,178.8159 Q111.0117,175.6865 112.3315,174.0347 Q113.6514,172.3828 116.1582,172.3828 Q116.8638,172.3828 117.5112,172.5322 Q118.1587,172.6816 118.7231,172.9805 L118.7231,175.7031 Q118.0923,175.1221 117.4988,174.8523 Q116.9053,174.5825 116.2744,174.5825 Q114.9297,174.5825 114.2449,175.6492 Q113.5601,176.7158 113.5601,178.8159 Q113.5601,180.9077 114.2449,181.9744 Q114.9297,183.041 116.2744,183.041 Q116.9053,183.041 117.4988,182.7712 Q118.0923,182.5015 118.7231,181.9204 Z "/><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="152" x="136.25" y="185.0469">ManageItemsModal</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="23.5" x2="368.5" y1="195" y2="195"/><ellipse cx="33.5" cy="229.2324" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="129" x="42.5" y="233.0234">groupName: string</text><ellipse cx="33.5" cy="245.7207" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="77" x="42.5" y="249.5117">type: string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="255" x="42.5" y="266">-- we really need to stop using &quot;type&quot;</text><ellipse cx="33.5" cy="278.6973" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="159" x="42.5" y="282.4883">remoteList: IRemoteList</text><ellipse cx="33.5" cy="295.1855" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="148" x="42.5" y="298.9766">selectedIds: number[]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="283" x="42.5" y="315.4648">-- but maybe should be array of id/name</text><ellipse cx="33.5" cy="328.1621" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="133" x="42.5" y="331.9531">onClose: () =&gt; void</text><ellipse cx="33.5" cy="344.6504" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="42.5" y="348.4414">loadMore: () =&gt; void</text><ellipse cx="33.5" cy="361.1387" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="321" x="42.5" y="364.9297">handleUpdate: (selectedIds: number[]) =&gt; void</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="23.5" x2="176.5" y1="211.2441" y2="211.2441"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="176.5" y="216.0352">Props</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="215.5" x2="368.5" y1="211.2441" y2="211.2441"/><ellipse cx="33.5" cy="398.1152" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="148" x="42.5" y="401.9063">selectedIds: number[]</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="23.5" x2="179" y1="380.127" y2="380.127"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="34" x="179" y="384.918">State</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="213" x2="368.5" y1="380.127" y2="380.127"/><ellipse cx="33.5" cy="435.0918" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="42.5" y="438.8828">toggleManagingId()</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="23.5" x2="166.5" y1="417.1035" y2="417.1035"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="166.5" y="421.8945">Methods</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="225.5" x2="368.5" y1="417.1035" y2="417.1035"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="23.5" x2="368.5" y1="445.8359" y2="445.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="28.5" y="463.3711">Notes</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="230" x="28.5" y="479.8594">-- will require significant refactor</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="215" x="28.5" y="496.3477">-- types aren&apos;t being translated</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="218" x="28.5" y="512.8359">-- need to remove DisplayMode</text><!--class GroupPortableModelsField--><rect fill="#FEFECE" filter="url(#fdn41owmamn91)" height="249.8594" id="GroupPortableModelsField" style="stroke: #A80036; stroke-width: 1.5;" width="416" x="405" y="216.5"/><ellipse cx="504.75" cy="232.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M507.7231,238.1431 Q507.1421,238.4419 506.5029,238.5913 Q505.8638,238.7407 505.1582,238.7407 Q502.6514,238.7407 501.3315,237.0889 Q500.0117,235.437 500.0117,232.3159 Q500.0117,229.1865 501.3315,227.5347 Q502.6514,225.8828 505.1582,225.8828 Q505.8638,225.8828 506.5112,226.0322 Q507.1587,226.1816 507.7231,226.4805 L507.7231,229.2031 Q507.0923,228.6221 506.4988,228.3523 Q505.9053,228.0825 505.2744,228.0825 Q503.9297,228.0825 503.2449,229.1492 Q502.5601,230.2158 502.5601,232.3159 Q502.5601,234.4077 503.2449,235.4744 Q503.9297,236.541 505.2744,236.541 Q505.9053,236.541 506.4988,236.2712 Q507.0923,236.0015 507.7231,235.4204 Z "/><text fill="#000000" font-family="sans-serif" font-size="16" lengthAdjust="spacingAndGlyphs" textLength="208" x="525.25" y="238.5469">GroupPortableModelsField</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="406" x2="820" y1="248.5" y2="248.5"/><ellipse cx="416" cy="282.7324" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="353" x="425" y="286.5234">portableModels: IRemoteValue&lt;PortableModelList&gt;</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="406" x2="554.5" y1="264.7441" y2="264.7441"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="117" x="554.5" y="269.5352">Connected Props</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="671.5" x2="820" y1="264.7441" y2="264.7441"/><ellipse cx="416" cy="319.709" fill="none" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="162" x="425" y="323.5">formikProps: formikBag</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="188" x="425" y="339.9883">-- use to derive selectedIds</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="308" x="425" y="356.4766">-- also use in custom handleUpdate function</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="406" x2="566.5" y1="301.7207" y2="301.7207"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="566.5" y="306.5117">Explicit Props</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="659.5" x2="820" y1="301.7207" y2="301.7207"/><ellipse cx="416" cy="389.6621" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="142" x="425" y="393.4531">loadMore: () =&gt; void</text><ellipse cx="416" cy="406.1504" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="321" x="425" y="409.9414">handleUpdate: (selectedIds: number[]) =&gt; void</text><ellipse cx="416" cy="422.6387" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="231" x="425" y="426.4297">hanldeManageOnClick: () =&gt; void</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="236" x="425" y="442.918">-- call api to load portable models</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="390" x="425" y="459.4063">-- launch ManageItemsModal and pass in loaded models</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="406" x2="583.5" y1="371.6738" y2="371.6738"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="583.5" y="376.4648">Methods</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="642.5" x2="820" y1="371.6738" y2="371.6738"/><path d="M395,32 L395,63.5 L359.5469,67.5 L395,71.5 L395,103.2422 A0,0 0 0 0 395,103.2422 L573,103.2422 A0,0 0 0 0 573,103.2422 L573,42 L563,32 L395,32 A0,0 0 0 0 395,32 " fill="#FBFB77" filter="url(#fdn41owmamn91)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M563,32 L563,42 L573,42 L563,32 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="127" x="401" y="49.5684">Need to add code to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="153" x="401" y="64.8789">generically pull sections</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="153" x="401" y="80.1895">from plugin registry and</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="76" x="401" y="95.5">render them</text><path d="M101.5,580 L101.5,635.9316 A0,0 0 0 0 101.5,635.9316 L290.5,635.9316 A0,0 0 0 0 290.5,635.9316 L290.5,590 L280.5,580 L200,580 L196,520.3688 L192,580 L101.5,580 A0,0 0 0 0 101.5,580 " fill="#FBFB77" filter="url(#fdn41owmamn91)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M280.5,580 L280.5,590 L290.5,590 L280.5,580 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="143" x="107.5" y="597.5684">Needs to be pulled out</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="164" x="107.5" y="612.8789">into own component from</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="118" x="107.5" y="628.1895">ManageGroupForm</text><path d="M856.5,313.5 L856.5,337.5 L821.0664,341.5 L856.5,345.5 L856.5,369.4316 A0,0 0 0 0 856.5,369.4316 L1039.5,369.4316 A0,0 0 0 0 1039.5,369.4316 L1039.5,323.5 L1029.5,313.5 L856.5,313.5 A0,0 0 0 0 856.5,313.5 " fill="#FBFB77" filter="url(#fdn41owmamn91)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1029.5,313.5 L1029.5,323.5 L1039.5,323.5 L1029.5,313.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="155" x="862.5" y="331.0684">Pull class names directly</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="162" x="862.5" y="346.3789">from ManageGroupForm&apos;s</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="862.5" y="361.6895">style.scss</text><!--link ManageGroupForm to GroupPortableModelsField--><path d="M308.5467,99.7023 C345.1092,128.7403 401.3083,173.3739 455.5149,216.4249 " fill="none" id="ManageGroupForm-GroupPortableModelsField" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="298.3141,91.5755,300.5249,98.4394,307.711,99.0386,305.5003,92.1747,298.3141,91.5755" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ManageGroupForm to ManageItemsModal--><path d="M258.3001,104.4135 C254.0387,120.6306 248.6952,140.9655 242.9395,162.8692 " fill="none" id="ManageGroupForm-ManageItemsModal" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="261.6105,91.8157,256.2169,96.6021,258.5607,103.4217,263.9542,98.6353,261.6105,91.8157" style="stroke: #A80036; stroke-width: 1.0;"/><!--link GroupPortableModelsField to ManageItemsModal--><path d="M391.2792,341.5 C384.148,341.5 377.0169,341.5 369.8857,341.5 " fill="none" id="GroupPortableModelsField-ManageItemsModal" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="404.5485,341.5,398.5485,337.5,392.5485,341.5,398.5485,345.5,404.5485,341.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classFontSize 16
+skinparam classAttributeFontSize 14
+package components/user-admin {
+  class ManageGroupForm
+
+  class ManageItemsModal {
+    - - Props - -
+    + groupName: string
+    + type: string
+    - - we really need to stop using "type"
+    + remoteList: IRemoteList
+    + selectedIds: number[]
+    - - but maybe should be array of id/name
+    + onClose: () => void
+    + loadMore: () => void
+    + handleUpdate: (selectedIds: number[]) => void
+    - - State - -
+    + selectedIds: number[]
+    - - Methods - -
+    + toggleManagingId()
+    __
+    Notes
+    - - will require significant refactor
+    - - types aren't being translated
+    - - need to remove DisplayMode
+  }
+}
+note right of ManageGroupForm 
+  Need to add code to
+  generically pull sections
+  from plugin registry and 
+  render them
+end note
+
+note bottom of ManageItemsModal 
+  Needs to be pulled out
+  into own component from 
+  ManageGroupForm
+end note
+
+package portable-model/admin {
+  class GroupPortableModelsField {
+    - - Connected Props - -
+     + portableModels: IRemoteValue<PortableModelList>
+    - - Explicit Props - -
+     + formikProps: formikBag
+     - - use to derive selectedIds
+     - - also use in custom handleUpdate function
+    - - Methods - -
+     + loadMore: () => void
+     + handleUpdate: (selectedIds: number[]) => void
+     + hanldeManageOnClick: () => void
+     - - call api to load portable models
+     - - launch ManageItemsModal and pass in loaded models
+  }
+}
+
+note right of GroupPortableModelsField 
+  Pull class names directly
+  from ManageGroupForm's
+  style.scss
+end note
+
+ManageGroupForm *- - GroupPortableModelsField
+ManageGroupForm *- - ManageItemsModal
+GroupPortableModelsField *- - ManageItemsModal
+  
+@enduml
+
+PlantUML version 1.2019.03(Sun Mar 10 06:04:44 CDT 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_162-b12
+Operating System: Mac OS X
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg></p>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
